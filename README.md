@@ -1,13 +1,20 @@
-# Sample Hardhat Project
+# Ethernaut CTF 
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Contracts in **/Contracts** directory. 
 
-Try running some of the following tasks:
+Scripts that solve the CTF in **/Scripts**.
 
+
+## Quick start
+
+Install dependencies : 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+yarn
 ```
+
+Test with
+```shell
+yarn hardhat scripts/*.js --network hardhat
+```
+
+
