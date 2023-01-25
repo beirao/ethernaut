@@ -2,13 +2,13 @@
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import '@openzeppelin/contracts/proxy/Proxy.sol';
+import '@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol';
 
-contract PuzzleProxy is Proxy {
+contract PuzzleProxy is ERC1967Proxy {
     address public pendingAdmin;
     address public admin;
 
-    constructor(address _admin, address _implementation, bytes memory _initData) Proxy(_implementation, _initData) {
+    constructor(address _admin, address _implementation, bytes memory _initData) ERC1967Proxy(_implementation, _initData) {
         admin = _admin;
     }
 
