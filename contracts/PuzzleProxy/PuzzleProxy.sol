@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 import '@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol';
+import 'hardhat/console.sol';
 
 contract PuzzleProxy is ERC1967Proxy {
     address public pendingAdmin;
@@ -78,6 +79,7 @@ contract PuzzleWallet {
             assembly {
                 selector := mload(add(_data, 32))
             }
+
             if (selector == this.deposit.selector) {
                 require(!depositCalled, 'Deposit can only be called once');
                 // Protect against reusing msg.value
